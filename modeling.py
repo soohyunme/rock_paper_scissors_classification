@@ -10,7 +10,6 @@ def rps_predict(file_path):
     IMG_WIDTH = 112
     IMG_HEIGHT = 112
 
-    dir_path = os.getcwd()
     src_img = cv2.imread(file_path, cv2.IMREAD_COLOR)
 
     dst_img = cv2.cvtColor(src_img, cv2.COLOR_BGR2RGB)
@@ -19,7 +18,7 @@ def rps_predict(file_path):
 
     x_data = dst_img.reshape(-1, IMG_WIDTH, IMG_HEIGHT, 3)
 
-    model = tf.keras.models.load_model('MobileNet_112_acc_0.996_Colab.h5')
+    model = tf.keras.models.load_model('MobileNet_Colab.h5')
 
     class_names = {0: 'paper', 1: 'rock', 2: 'scissor'}
     ret_ = class_names[np.argmax(model.predict(x_data))]
