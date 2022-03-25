@@ -1,7 +1,6 @@
 # 프로젝트 설명 및 회고
----
 ## 구조도
-![rps 구조도.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cda10c01-dc83-46b2-9d96-dc550fb8d1a1/rps_구조도.png)
+![](/readme/img/구조도.png)
 
 ## 프로젝트 목표
 
