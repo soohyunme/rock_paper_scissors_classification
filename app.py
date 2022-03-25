@@ -7,7 +7,7 @@ import rps_battle
 import os
 
 model = tf.keras.models.load_model('MobileNet_Colab.h5')
-class_names = {0: 'paper', 1: 'rock', 2: 'scissor'}
+class_names = {0: 'paper', 1: 'rock', 2: 'scissors'}
 
 app = Flask(__name__)
 
@@ -25,9 +25,8 @@ def index():
         f.save(file_path)
         probability = ml.rps_predict(file_path, model)
         user_str = class_names[np.argmax(probability)]
-        result, com_list = rps_battle.checkWin(np.argmax(probability))
-        com_str = class_names[com_list[0]]
-        com_path = com_list[1]
+        result, com_path, com = rps_battle.checkWin(np.argmax(probability))
+        com_str = class_names[com]
         return render_template("index.html", img=file_path, ret_=user_str, com=com_str, com_path=com_path,
                                result=result)
 
