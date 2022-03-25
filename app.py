@@ -26,9 +26,9 @@ def index():
         probability = ml.rps_predict(file_path, model)
         user_str = class_names[np.argmax(probability)]
         com, com_path, result, com_list = rps_battle.checkWin(np.argmax(probability))
-        print('com :'+com)
-        print('com path :'+com_path)
-        print('list :'+com_list)
+        print('com :'+str(com))
+        print('com path :'+str(com_path))
+        print('list :'+str(com_list))
         com_str = class_names[com]
         move = 'Battle'
         return render_template("index.html", img=file_path, ret_=user_str, com=com_str, com_path=com_path,
