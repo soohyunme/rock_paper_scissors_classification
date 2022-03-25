@@ -1,6 +1,6 @@
 # 프로젝트 설명 및 회고
 ## 구조도
-![구조도](rps구조도.png)
+![구조도](img/rps구조도.png)
 
 ## 프로젝트 목표
 
@@ -13,30 +13,28 @@
 ## Tech Stack
 
 1. 모델링
-    1. Python, Tensorflow
+    - Python, Tensorflow
 2. 웹앱
-    1. Frontend - HTML, CSS
-    2. Backend - Flask
-    3. hosting - GCP Compute Engine
+    - Frontend - HTML, CSS
+    - Backend - Flask
+    - hosting - GCP Compute Engine
 3. 기타
-    1. Github
-    2. Docker
+    - Github
+    - Docker
 
 ## 데이터셋
 
-가위,바위,보 이미지 각각 2500가량, 총 7500개 정도
-
-사람,각도,조명 등의 조건이 모두 다른 이미지셋
-
-학습시엔 시간단축을 위해 사이즈를 1/2로 축소
+- 가위, 바위, 보 이미지 각각 2500 개, 총 7500개
+- 사람,각도,조명 등의 조건이 모두 다른 이미지셋
+- 학습 시엔 시간 단축을 위해 사이즈를 1/2로 축소
 
 ## 모델링
 
 1. 모델 구현 
 2. 모델 비교 - MobileNet, ResNet50, Xception
-    1. Xception이 99.9%로 100%에 가까운 성능을 보여주지만 학습 시간이 다른 모델에 비해 많이 소모되어 제외함
-    2. MobileNet과 ResNet50을 비교한 결과 ResNet50 모델에 비해 MobileNet의 수렴 속도가 월등히 빠른 것으로 나타남
-    3. 때문에 MobileNet을 채택
+    - Xception이 99.9%로 100%에 가까운 성능을 보여주지만 학습 시간이 다른 모델에 비해 많이 소모되어 제외함
+    - MobileNet과 ResNet50을 비교한 결과 ResNet50 모델에 비해 MobileNet의 수렴 속도가 월등히 빠른 것으로 나타남
+    - 때문에 MobileNet을 채택
 
 ## 웹앱
 
@@ -61,4 +59,4 @@
 - CI/CD툴을 사용해 자동화,로깅,모니터링 추가
 - K8S클러스터 구성 및 CT 파이프라인 구성
 - 데이터 버전 관리
-- 모델 교체 → 축소된 CNN
+- 모델 교체 → 축소된 CNN 모델
