@@ -36,12 +36,13 @@
                                     <div class="row">
                                         <div class="col">
                                             <input class="form-control form-control-lg" id="imageFile" type="file" name="imageFile"/>
-                                            <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
-                                            <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
                                         </div>
                                         <div class="col-auto"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
                                     </div>
                                 </form>
+                            {% if error %}
+                                <h3 class="text-white">Image must be .jpg or .png</h3>
+                            {%endif%}
                         </div>
                     </div>
                 </div>
@@ -49,23 +50,32 @@
         </header>
        {% if ret_ %}
         <!-- Icons Grid-->
-        <section class="features-icons bg-light text-center">
+        <section class="features-icons bg-body text-center" id="Battle">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                            <img src="{{url_for('static', filename = img)}}" width="224" height="224">
-                            <h3>{{ret_}}</h3>
+                            <h3>You</h3>
+                            <img src="{{img}}" width="224" height="224">
+                            <p class="lead mb-0">{{ret_}}</p>
                         </div>
                     </div>
                         <div class="col-lg-4">
-                            <div class="h-50"></div>
-                            <h1>VS</h1>
+                            <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3 h-50">
+                                <div class="h-50">
+                                    <h1>{{result}}</h1>
+                                </div>
+                                <div class="py-sm-5">
+                                    <h1>VS</h1>
+                                </div>
+                                <div class="h-50"></div>
+                            </div>
                         </div>
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                            <img src="{{url_for('static', filename = img)}}" width="224" height="224">
-                            <h3>{{ret_}}</h3>
+                            <h3>CPU</h3>
+                            <img src="{{com_path}}" width="224" height="224">
+                            <p class="lead mb-0">{{com}}</p>
                         </div>
                     </div>
                 </div>
