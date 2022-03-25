@@ -4,6 +4,7 @@ import modeling as ml
 import tensorflow as tf
 import numpy as np
 import rps_battle
+import os
 
 model = tf.keras.models.load_model('MobileNet_Colab.h5')
 class_names = {0: 'paper', 1: 'rock', 2: 'scissor'}
@@ -24,7 +25,10 @@ def index():
         f.save(file_path)
         probability = ml.rps_predict(file_path, model)
         user_str = class_names[np.argmax(probability)]
-        com, com_path, result = rps_battle.checkWin(np.argmax(probability))
+        com, com_path, result, com_list = rps_battle.checkWin(np.argmax(probability))
+        print('com :'+com)
+        print('com path :'+com_path)
+        print('list :'+com_list)
         com_str = class_names[com]
         move = 'Battle'
         return render_template("index.html", img=file_path, ret_=user_str, com=com_str, com_path=com_path,
@@ -32,4 +36,4 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
