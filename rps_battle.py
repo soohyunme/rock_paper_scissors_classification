@@ -7,7 +7,6 @@ sample_label_list = list(map(lambda x: x.split('.')[0], sample_file_list))
 class_names = {'paper': 0, 'rock': 1, 'scissors': 2}
 
 class_map = list(map(lambda x: class_names[x], sample_label_list))
-zip(sample_file_list)
 result = {0: 'WIN', 1: 'LOSE', 2: 'DRAW'}
 
 
@@ -27,3 +26,4 @@ def checkWin(user):
         state = 0
 
     return result[state], com_path, com
+
