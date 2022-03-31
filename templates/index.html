@@ -19,7 +19,17 @@
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="#!">Forward-Lab</a>
+                <a class="navbar-brand" href="">Forward-Lab</a>
+                   <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a href="https://github.com/sangho5o5"><img src="static\assets\sangho.png" class="fs-img"></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="https://github.com/soohyunme"><img src="static\assets\soohyun.png" class="fs-img"></a>
+                            </li>
+                        </ul>
+                    </div>
             </div>
         </nav>
         <!-- Masthead-->
@@ -40,9 +50,6 @@
                                         <div class="col-auto"><button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button></div>
                                     </div>
                                 </form>
-                            {% if error %}
-                                <h3 class="text-white">Image must be .jpg or .png</h3>
-                            {%endif%}
                         </div>
                     </div>
                 </div>
@@ -81,8 +88,15 @@
                 </div>
             </div>
         </section>
+        {%elif unknown%}
+        <section class="features-icons bg-light text-center">
+                <h1 class="mb-5">Maybe that's not hand picture...</h1>
+        </section>
+        {%elif error==404%}
+        <section class="features-icons bg-light text-center">
+                <h1 class="mb-5">Image must be .jpg or .png</h1>
+        </section>
         {%else%}
-        <!-- Icons Grid-->
         <section class="features-icons bg-light text-center">
                 <h1 class="mb-5">Add a picture of your hand and submit!</h1>
         </section>
@@ -96,20 +110,20 @@
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Forward-Lab 2021. All Rights Reserved.</p>
                     </div>
-                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
-                        <ul class="list-inline mb-0">
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-facebook fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item me-4">
-                                <a href="#!"><i class="bi-twitter fs-3"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!"><i class="bi-instagram fs-3"></i></a>
-                            </li>
-                        </ul>
-                    </div>
+<!--                    <div class="col-lg-6 h-100 text-center text-lg-end my-auto">-->
+<!--                        <ul class="list-inline mb-0">-->
+<!--                            </li>-->
+<!--                            <li class="list-inline-item me-4">-->
+<!--                                <a href="#!"><i class="bi-facebook fs-3"></i></a>-->
+<!--                            </li>-->
+<!--                            <li class="list-inline-item me-4">-->
+<!--                                <a href="#!"><i class="bi-twitter fs-3"></i></a>-->
+<!--                            </li>-->
+<!--                            <li class="list-inline-item">-->
+<!--                                <a href="#!"><i class="bi-instagram fs-3"></i></a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
                 </div>
             </div>
         </footer>
