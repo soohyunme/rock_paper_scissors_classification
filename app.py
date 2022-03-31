@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
-import modeling as ml
+import model as ml
 import tensorflow as tf
 import numpy as np
 import rps_battle
@@ -23,7 +23,9 @@ def index():
             return render_template("index.html", error=404)
         file_path = 'static/images/' + secure_filename(f.filename)
         f.save(file_path)
-        probability = ml.rps_predict(file_path, model)
+        probability = ml.rps_predict(file_path, model)[0]
+        if max(probability) < 0.7:
+            return render_template("index.html", unknown=True)
         user_str = class_names[np.argmax(probability)]
         result, com_path, com = rps_battle.checkWin(np.argmax(probability))
         com_str = class_names[com]

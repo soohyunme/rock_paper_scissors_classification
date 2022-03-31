@@ -879,7 +879,7 @@ button {
 	padding-top:.3125rem;
 	padding-bottom:.3125rem;
 	margin-right:1rem;
-	font-size:1.25rem;
+	font-size:1.55rem;
 	text-decoration:none;
 	white-space:nowrap
 }
@@ -915,6 +915,13 @@ button {
 }
 .navbar-light .navbar-text a,.navbar-light .navbar-text a:focus,.navbar-light .navbar-text a:hover {
 	color:rgba(0,0,0,.9)
+}
+.navbar-title {
+	margin-right:1rem;
+	font-size:1.55rem;
+	text-decoration:none;
+	text-align:bottom;
+	white-space:nowrap
 }
 .page-link {
 	position:relative;
@@ -1226,6 +1233,12 @@ button {
 	padding-top:3rem!important;
 	padding-bottom:3rem!important
 }
+.fs-img {
+  width: 50px;
+  height: 50px;
+  object-fit: scale-down;
+}
+
 .fs-1 {
 	font-size:calc(1.375rem+1.5vw)!important
 }
